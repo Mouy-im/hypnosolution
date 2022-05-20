@@ -1,0 +1,14 @@
+.article {
+    div.resume,
+    div.more {
+        margin:100px auto;
+    }
+    p {
+        margin: 20px auto;
+        text-align: justify;
+    }
+    .ref_url a{
+        color:$color-primary;
+        font-weight: 600;
+    }
+}

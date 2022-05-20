@@ -1,0 +1,165 @@
+.navbar {
+    width: 100%;
+    height: $nav_height;
+    border-bottom: 2px solid #f1f1f1;
+    padding: 0px 20px;
+    display:flex;
+    justify-content:space-between;
+    position:fixed;
+    z-index:10;
+    background-color: #fff;
+    @media (max-width:768px) {
+        height: $mobile_nav_height;
+    }
+    .logo {
+        display:flex;
+        align-items: center;
+        img {
+            height:100%;  
+            } 
+        .slogan {
+            font-size: 24px;
+            @media (max-width:768px) {
+                font-size: 20px;
+            }
+        }
+        .first-letter {
+            color: $color-primary;
+            font-weight: 800;
+        }
+    }
+    .right-nav {
+        display:flex;
+        ul {
+            list-style:none;
+            display:flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+            @media (max-width:768px) {
+                justify-content: center;
+                flex-flow: column nowrap;
+                background-color: $color-primary;
+                position:fixed;
+                top:0px;
+                right:0px;
+                height:100vh;
+                width:300px;
+                &.openMenu {
+                    transform:translate(0);
+                    a {
+                        color:#fff;
+                        &:hover::after {
+                            background:#fff;
+                        }
+                        &.active {
+                            color:#fff;
+                        }
+
+                    } 
+                }
+                &.closeMenu {
+                    transform:translate(100%);
+                }
+                    
+            }
+            a {
+                padding: 10px 10px; 
+                text-decoration: none;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: $color-secondary;
+                position:relative;
+                &.active {
+                   color:$color-primary;
+                   font-weight: 600;
+                }
+                &:nth-child(3) {
+                    color:$color-secondary;
+                    font-weight: 300;
+                }
+                &:hover::after {
+                    content:'';
+                    width:65%;
+                    height:3px;
+                    background: $color-primary;
+                    position:absolute;
+                    bottom:1px;
+                    left:50%;
+                    transform:translateX(-50%);
+                    transition: 0.3s ease;
+                    animation-duration: 1s;
+                    animation-name: appear;
+                }
+                
+            }
+        }
+    }
+    .burger {
+        cursor:pointer;
+        width:2rem;
+        height:2rem;
+        position:fixed;
+        top:15px;
+        right:20px; 
+        z-index: 10;
+        display:none;
+        //margin-top:8px;
+        &.openMenu {
+            div {
+                background-color: #fff;
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    transform: rotate(100%);
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        &.closeMenu {
+            div {
+                background-color: $color-primary;
+                &:nth-child(1) {
+                    transform: rotate(0);
+                }
+                &:nth-child(2) {
+                    transform: rotate(0%);
+                    opacity:1;
+                }
+                &:nth-child(3) {
+                    transform: rotate(0);
+                }
+            }
+        }
+         @media (max-width:768px) {
+            display:flex;
+            justify-content: space-around;
+            flex-flow: column nowrap;
+         }
+         div {
+             width: 2rem;
+             height: 3px;
+             background-color:$color-primary;
+             border-radius: 25px;
+             transform-origin: 1px;
+             transition: all 0.3s ease
+        }
+    } 
+}
+
+@keyframes appear {
+  from {
+    width:0%
+  }
+  to {
+    width:65%
+  }
+}
+
+@media (max-width:768px) {
+   
+}

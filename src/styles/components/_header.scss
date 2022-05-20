@@ -1,0 +1,13 @@
+.header {
+    padding-top: $nav_height;
+    @media (max-width:768px) {
+      padding-top: $mobile_nav_height;  
+    }
+    img {
+        aspect-ratio: 300/100;
+        height:auto;
+        width:100%;
+        object-fit: cover;
+    }
+    
+}

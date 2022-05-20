@@ -1,0 +1,42 @@
+$color-primary:#A8046D;
+$color-secondary:rgb(50,50,50);
+$nav_height: 100px;
+$mobile_nav_height: 60px;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main {
+    width:60%;
+    margin:50px auto;
+    
+}
+
+h2 {
+    margin: 1em 0px 2em;
+    text-align: center;
+    position:relative;
+}
+h2:before {
+   content:'';
+   width:30px;
+   background-color:$color-primary;
+   height:5px;
+   position:absolute;
+   bottom:-15px;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
