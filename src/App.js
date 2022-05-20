@@ -5,7 +5,7 @@ import Article from './pages/Article';
 import NotFound from './pages/NotFound';
 import Navbar from './components/Nav/Navbar';
 import { MemoryRouter } from 'react-router';
-    
+
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
             <Route exact path="/article/:id/:slug" element={<Article />} />
             <Route path="*" element={<NotFound/>} />
           </Routes>
-       
       </div>
     </BrowserRouter>
   );

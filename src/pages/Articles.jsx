@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import ArticleService from '../services/ArticleService';
+import { useTranslation } from 'react-i18next';
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
         ArticleService.getArticles().then((datas) => setArticles(datas));
@@ -15,7 +17,7 @@ const Articles = () => {
         <div>
             <Header title='hypnosolution-banniere-articles'/>
             <main>
-                <h2 className="big-title">Les Articles</h2>
+                <h2 className="big-title">{t('posts')}</h2>
                 <div className="card-container">
                     {articles.map((article) => {
                         return (
