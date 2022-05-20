@@ -7,16 +7,16 @@ import Navbar from './components/Nav/Navbar';
 import { MemoryRouter } from 'react-router';
     
 
-function App(lang) {
+function App() {
   return (
     <BrowserRouter history = {MemoryRouter}>
       <div className="App">
        <Navbar />
           <Routes>
-            <Route exact path="/" element={<Home lang={lang} />} />
-            <Route exact path="/articles" element={<Articles lang={lang} />} />
-            <Route exact path="/article/:id/:slug" element={<Article lang={lang} />} />
-            <Route path="*" element={<NotFound lang={lang} />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/articles" element={<Articles />} />
+            <Route exact path="/article/:id/:slug" element={<Article />} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
        
       </div>
