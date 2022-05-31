@@ -3,5 +3,9 @@
     "home": "Accueil",
     "posts": "Articles",
     "post": "Article",
-    "contact": "Contact"
+    "contact": "Contact",
+    "404 error": "Erreur 404",
+    "page does not exist": "Page inexistante",
+    "Article to deepen your knowledge about this disease" :"Article pour approfondir ses connaissances au sujet de cette maladie",
+    "See the article" : "Voir l'article"
 }

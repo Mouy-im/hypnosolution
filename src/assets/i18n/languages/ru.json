@@ -3,5 +3,9 @@
     "home": "дом",
     "posts": "сообщения",
     "post": "сообщение",
-    "contact":"контакт"
+    "contact":"контакт",
+    "404 error": "ошибка 404",
+    "page does not exist": "страница не существует",
+    "Article to deepen your knowledge about this disease" :"Статья для углубления ваших знаний об этом заболевании",
+    "See the article" : "См. статью"
 }
