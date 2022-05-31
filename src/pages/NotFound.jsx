@@ -1,10 +1,10 @@
 import React from 'react';
 
-const NotFound = () => {
+const NotFound = ({t}) => {
     return (
-        <div class="notFound">
+        <div className="notFound">
             <img src="./img/hypnosolution-404page.jpg" />
-            <p>Erreur 404</p>
+            <p>{t('page does not exist')}<br />{t('404 error')}</p>
         </div>
     );
 };

@@ -1,11 +1,17 @@
-import React from 'react';
 import { useNavigate  } from "react-router-dom";
+import React, {useState, useEffect } from 'react';
 
-const Card = ({article}) => {
+const Card = ({article, t, i18n}) => {
     const navigation = useNavigate();
     const goToArticle = (id,slug) => {
         navigation(`/article/${id}/${slug}`);
     }
+    const [lang, setLang] = useState();
+
+    useEffect(() => {
+        setLang(i18n.language);
+    },[i18n.language]);
+
     return (
         <div className="card-info" onClick={() => goToArticle(article.id, article.slug)}>
                 <div className="card-img">
@@ -15,8 +21,8 @@ const Card = ({article}) => {
                     ) : null }
                 </div>
                 <div className="card-content">
-                    <h3>{article.title.rendered}</h3>
-                    <div className="card-excerpt" dangerouslySetInnerHTML={{__html: article.excerpt.rendered}}></div>
+                    <h3>{ lang === 'fr' ? article.title.rendered : article.acf.traduction_titre }</h3>
+                    <div className="card-excerpt" dangerouslySetInnerHTML={ lang === 'fr' ? {__html: article.content.rendered} : {__html:article.acf.traduction_contenu}}></div>
                 </div>
         </div>  
     );
