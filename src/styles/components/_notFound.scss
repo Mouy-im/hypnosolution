@@ -8,11 +8,13 @@
     }
     p {
         position:absolute;
-        bottom:50%;
+        bottom:30%;
         transform: translateX(50%);
         right:50%;
         color:#fff;
         font-size: 5vw;
+        text-align: center;
+        width:100%;
     }
     
 }
