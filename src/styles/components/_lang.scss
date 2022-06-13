@@ -1,8 +1,41 @@
-.lang {
-    display:flex;
-    align-items: center;
-    img{
-        box-shadow: 1px -0.4px 0.05px grey;
-        cursor:pointer;
+
+.lang-menu {
+    cursor: pointer;
+    .current {
+        margin-right:10px;
     }
+    svg.svg-inline--fa.fa-chevron-down {
+            transition: transform 0.5s ease-out;
+            &.show {
+                transform: rotate(180deg);
+            }
+            &.hide {
+                transform: rotate(0deg);
+            }  
+            @media (max-width:768px) {
+                color:#fff;
+            }
+        }
+    .lang {
+        position: absolute;
+        display:flex;
+        align-items: center;
+        img{
+            box-shadow: 1px -0.4px 0.05px grey;
+            cursor:pointer;
+        }
+        &.closeMenu {
+            opacity:0;
+        }
+        &.openMenu {
+            opacity:1;
+            padding: 10px;
+            box-shadow: 1px 2px 5px grey;
+            margin-top: 5px;
+            margin-left: -10px;
+            border-radius: 5px;
+            background-color: #fff;
+            transition: opacity 0.5s ease-out;
+        }
+    }   
 }
