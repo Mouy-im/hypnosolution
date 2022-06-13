@@ -1,0 +1,13 @@
+.commentForm {
+    width:500px;
+    margin:100px auto 100px;
+    @media (max-width:980px) {
+        width:80%;
+    }
+    @media (max-width:780px) {
+        width:100%;
+    }
+    form {
+        text-align: center;
+    }
+}
