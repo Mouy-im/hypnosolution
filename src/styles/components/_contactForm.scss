@@ -1,0 +1,26 @@
+.contactForm {
+    h3 {
+        text-align: center;
+        margin:20px 0px;
+    }
+    form{
+        text-align: center;
+        .recaptcha-form div div {
+            margin:30px auto 0px;
+        }
+    }
+    width:600px;
+    margin:100px auto 0px;
+    @media (max-width:980px) {
+        width:80%;
+    }
+    @media (max-width:780px) {
+        width:100%;
+    }
+    select, input, textarea {
+        width:80%;
+        @media (max-width:780px) {
+            width:75%;
+        }
+    }   
+}

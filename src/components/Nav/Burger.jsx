@@ -18,7 +18,7 @@ const Burger = () => {
                 <ul className= {"menu " + (open ? 'openMenu' : 'closeMenu')} open={open} >
                     <NavLink onClick={() => setOpen(!open)} to='/'>{t('home')}</NavLink>
                     <NavLink onClick={() => setOpen(!open)} to='/articles'>{t('posts')}</NavLink>
-                    <NavLink onClick={() => setOpen(!open)} to='#contact'>{t('contact')}</NavLink>
+                    <NavLink onClick={() => setOpen(!open)} to='/contact'>{t('contact')}</NavLink>
                     <Lang />
                 </ul>
             </div>
