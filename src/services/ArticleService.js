@@ -11,7 +11,12 @@ export default class ArticleService {
         .then((response) => response.json())
         .catch(error => this.handleError(error));
     }
-
+    
+    static getComments(id) {
+        return fetch(`https://admin.hypnosolution-accompagnement.com/wp-json/wp/v2/comments?post=${id}`)
+        .then((response) => response.json())
+        .catch(error => this.handleError(error));
+    }
     
     static handleError(error) {
         console.error(error);
