@@ -6,7 +6,7 @@ const Card = ({article, t, i18n}) => {
     const goToArticle = (id,slug) => {
         navigation(`/article/${id}/${slug}`);
     }
-    const [lang, setLang] = useState();
+    const [lang, setLang] = useState(i18n.language);
 
     useEffect(() => {
         setLang(i18n.language);
@@ -21,8 +21,9 @@ const Card = ({article, t, i18n}) => {
                     ) : null }
                 </div>
                 <div className="card-content">
-                    <h3>{ lang === 'fr' ? article.title.rendered : article.acf.traduction_titre }</h3>
-                    <div className="card-excerpt" dangerouslySetInnerHTML={ lang === 'fr' ? {__html: article.content.rendered} : {__html:article.acf.traduction_contenu}}></div>
+                    <h3>{ lang === 'fr' || lang === 'fr-FR' ? article.title.rendered : article.acf.traduction_titre }</h3>
+                    <div className="card-excerpt" dangerouslySetInnerHTML={ lang === 'fr' || lang === 'fr-FR' ? {__html: article.content.rendered} : {__html:article.acf.traduction_contenu}}></div>
+                    <button class="button" onClick={() => goToArticle(article.id, article.slug)}>{t("See more")}</button>
                 </div>
         </div>  
     );
