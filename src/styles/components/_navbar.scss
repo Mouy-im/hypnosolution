@@ -74,10 +74,6 @@
                    color:$color-primary;
                    font-weight: 600;
                 }
-                &:nth-child(3) {
-                    color:$color-secondary;
-                    font-weight: 300;
-                }
                 &:hover::after {
                     content:'';
                     width:65%;
@@ -134,6 +130,7 @@
                     transform: rotate(0);
                 }
             }
+            
         }
          @media (max-width:768px) {
             display:flex;
