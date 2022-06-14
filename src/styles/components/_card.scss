@@ -28,6 +28,9 @@
                 -webkit-line-clamp: 3;
                 overflow: hidden;
                 text-align: justify;
+                p:nth-of-type(2){
+                    display:none;
+                }
                 .link-more {
                     padding-top: 20px;
                    a {
@@ -35,7 +38,7 @@
                        font-style: italic;
                         color: $color-primary;
                         text-decoration: underline;
-                } 
+                    } 
                 }
                 
             }
