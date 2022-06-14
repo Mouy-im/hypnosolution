@@ -59,8 +59,14 @@
     "Average impact":"Retentissement moyen",
     "Significant impact":"Retentissement important",
     "Extreme impact":"Retentissement extrême",
-    "Reset":"Réinitialiser"
-
-
+    "Reset":"Réinitialiser",
+    "_comments": "Comments",
+    "Leave your comment":"Laissez votre commentaire",
+    "Comment":"Commentaire",
+    "Comments":"Commentaires",
+    "Publish":"Publier",
+    "Your comment will be published shortly after validation":"Votre commentaire sera publié rapidement après validation",
+    "Comment of":"Commentaire de",
+    "at":"du"
 
 }
