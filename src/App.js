@@ -8,6 +8,8 @@ import { MemoryRouter } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+// import i18n (needs to be bundled ;))
+import './assets/i18n/i18n';
 
 function App() {
   
