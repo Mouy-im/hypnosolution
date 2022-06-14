@@ -12,15 +12,19 @@ const EurotophobieForm = ({t}) => {
     const [response6, setResponse6] = useState(null);
     const [res, setRes] = useState(null);
     const [message, setMessage] = useState('');
-
+    const [displayResult, setDisplayResult] = useState('');  
+    
     const calcEurotophobie = (e) => {
         e.preventDefault();
         setRes(eval((Number(response1)+Number(response2)+Number(response3)+Number(response4)+Number(response5)+Number(response6))));
+        setDisplayResult(`<h4>${t('Result')}</h4>
+        <p>${message}</p>`);
     }  
     const reset = (e) => {
         e.preventDefault();
         setRes(null);
         setMessage('');
+        setDisplayResult('');
         document.querySelectorAll('input[type=radio]').forEach( el => el.checked = false );
     } 
     
@@ -185,9 +189,7 @@ const EurotophobieForm = ({t}) => {
                     <button type="submit" className="result button" onClick={(e) => calcEurotophobie(e)}><Scrollchor to="#result">{t('Result')}</Scrollchor></button>
                  )}
                 </div>
-                <div id="result" className={"result " + ((res != null && message != '') ? 'show' : 'hide')}>
-                    <h4>{t('Result')}</h4>
-                    <p>{message}</p>
+                <div id="result" dangerouslySetInnerHTML={{__html: displayResult}}  className={"result " + ((res != null && message != '') ? 'show' : 'hide')}>
                 </div>
             </form>
         </div>

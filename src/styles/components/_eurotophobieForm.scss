@@ -14,18 +14,21 @@
     #result {
         &.show{
             opacity:1;
+            border: 1px solid grey;
+            margin: 50px 0px;
+            padding:50px;
+            text-align: center;
+            p {
+                text-align: center;
+                padding: 0px 100px;
+            }
         }
         &.hide{
             opacity:0;
-        }
-        border: 1px solid grey;
-        margin: 50px 0px;
-        padding:50px;
-        text-align: center;
-        p {
-            text-align: center;
-            padding: 0px 100px;
-        }
+            p {
+                padding: 0px 0px;
+            }
+        }  
     }
     button.button{
         &.reset{
