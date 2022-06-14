@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const CommentForm = ({article, t}) => {
+    const [sentComment, setSentComment] = useState(false);
+    console.log(sentComment);
     const handleSubmit = (e) => {
         e.preventDefault();
         const [postId, name, email, comment] = e.target.elements;
@@ -26,6 +28,7 @@ const CommentForm = ({article, t}) => {
                 name.value = '';
                 email.value = '';
                 comment.value = '';
+                setSentComment(true);
             }
         return response.json();
         })
@@ -37,15 +40,16 @@ const CommentForm = ({article, t}) => {
     }
     return (
         <div className='commentForm'>
-            <h3>{t('Leave a comment...')}</h3>
+            <h3>{t('Leave your comment')} !</h3>
+            {!sentComment ? (
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input type="hidden" id="postId" value={article.id} />
                 <div className="form-field">
-                    <label htmlFor="name">{t('Name')}<span className='required'>*</span></label>
+                    <label htmlFor="name">{t('Your Name')}<span className='required'>*</span></label>
                     <input id="name" type="text" required />
                 </div>
                 <div className="form-field">
-                    <label htmlFor="email">{t('Email')}<span className='required'>*</span></label>
+                    <label htmlFor="email">{t('Your Email')}<span className='required'>*</span></label>
                     <input
                     id="email"
                     type="email"
@@ -56,11 +60,15 @@ const CommentForm = ({article, t}) => {
                     <label htmlFor="comment">{t('Comment')}<span className='required'>*</span></label>
                     <textarea
                     id="comment"
+                    rows="5"
                     required
                     />
                 </div>
-                <button className="button" type="submit">{t('Send Comment')}</button>
+                <button className="button" type="submit">{t('Publish')}</button>
             </form>
+            ) : (
+            <>{t('Your comment will be published shortly after validation')} !</>
+            )}
         </div>
     );
 };
