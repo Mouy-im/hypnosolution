@@ -58,7 +58,7 @@ const Article = ({t, i18n}) => {
                 
                 </main>
                 <CommentForm article={article} t={t} />
-                <DisplayComments article={article} t={t} />
+                <DisplayComments article={article} t={t} i18n={i18n} />
             </>
             ) : ( 
                 <></>
